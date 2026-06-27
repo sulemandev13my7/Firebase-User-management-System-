@@ -198,6 +198,320 @@ input:focus {
   padding: 20px;
 }
 
+/* ========================================
+   RESPONSIVE MEDIA QUERIES FOR ALL DEVICES
+   ======================================== */
+
+/* EXTRA SMALL DEVICES (Phones: 320px - 480px) */
+@media (max-width: 480px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    margin: 16px auto 0;
+    padding: 16px;
+  }
+
+  .auth-form,
+  .user-form {
+    gap: 12px;
+  }
+
+  .auth-toggle {
+    flex-wrap: wrap;
+  }
+
+  .toggle-btn,
+  .primary-btn,
+  .secondary-btn,
+  .ghost-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .form-card,
+  .table-card {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input {
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+
+  .dashboard-toolbar,
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+/* SMALL DEVICES (Tablets & Large Phones: 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-shell {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    margin: 20px auto 0;
+    padding: 20px;
+  }
+
+  .auth-toggle {
+    justify-content: center;
+  }
+
+  .toggle-btn,
+  .primary-btn,
+  .secondary-btn,
+  .ghost-btn {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .form-card,
+  .table-card {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-toolbar,
+  .card-header {
+    flex-wrap: wrap;
+  }
+
+  input {
+    padding: 11px 13px;
+  }
+}
+
+/* MEDIUM DEVICES (Tablets: 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-shell {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .hero-card {
+    flex-direction: row;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .auth-card {
+    max-width: 520px;
+    margin: 30px auto 0;
+    padding: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .form-card,
+  .table-card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-toolbar,
+  .card-header {
+    gap: 16px;
+  }
+}
+
+/* LARGE DEVICES (Desktop: 1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .app-shell {
+    padding: 24px;
+    max-width: 1180px;
+  }
+
+  .hero-card {
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .auth-card {
+    max-width: 480px;
+    margin: 30px auto 0;
+  }
+}
+
+/* EXTRA LARGE DEVICES (Desktop: 1441px and above) */
+@media (min-width: 1441px) {
+  .app-shell {
+    padding: 28px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .hero-card {
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ========================================
+   ORIENTATION-SPECIFIC STYLES
+   ======================================== */
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .hero-card {
+    margin-bottom: 12px;
+  }
+
+  .auth-card {
+    margin-top: 16px;
+  }
+
+  .stats-grid {
+    gap: 12px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  body {
+    background: white;
+  }
+
+  .hero-card,
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    display: none;
+  }
+
+  .auth-toggle {
+    display: none;
+  }
+}
+
+/* ========================================
+   HIGH RESOLUTION DISPLAYS (Retina)
+   ======================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-card,
+  .card {
+    border-width: 0.5px;
+  }
+}
+
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
