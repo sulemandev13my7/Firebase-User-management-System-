@@ -1,4 +1,5 @@
-# Firebase User Management System
+# Firebase User Management System 
+# CRUD + sign-up / login System
 
 ## Setup
 
