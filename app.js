@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "auth-salman-3b7e8.firebaseapp.com",
-  projectId: "auth-salman-3b7e8",
-  storageBucket: "auth-salman-3b7e8.firebasestorage.app",
-  messagingSenderId: "851519714542",
-  appId: "1:851519714542:web:f7c87ee7bae62c6602afff",
-  measurementId: "G-548B02TWFK"
+    apiKey: "",
+    authDomain: "auth-salman-3b7e8.firebaseapp.com",
+    projectId: "auth-salman-3b7e8",
+    storageBucket: "auth-salman-3b7e8.firebasestorage.app",
+    messagingSenderId: "851519714542",
+    appId: "1:851519714542:web:f7c87ee7bae62c6602afff",
+    measurementId: "G-548B02TWFK"
 };
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
