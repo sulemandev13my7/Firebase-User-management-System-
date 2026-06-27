@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management Firebase </title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="hero-card">
+            <div>
+                <p class="eyebrow">Firebase + Firestore</p>
+                <h1>User Management System</h1>
+                <p class="hero-copy">
+                    Sign up, log in, manage user profiles, and keep everything synced in Firestore.
+                </p>
+            </div>
+        </header>
+
+        <section id="authView" class="card auth-card">
+            <div class="auth-toggle">
+                <button id="showLoginBtn" class="toggle-btn active">Login</button>
+                <button id="showSignupBtn" class="toggle-btn">Sign Up</button>
+            </div>
+
+            <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+            <form id="loginForm" class="auth-form">
+                <h2>Welcome back</h2>
+                <label>
+                    Email
+                    <input type="email" id="loginEmail" required placeholder="you@example.com" />
+                </label>
+                <label>
+                    Password
+                    <input type="password" id="loginPassword" required minlength="6" placeholder="••••••" />
+                </label>
+                <button type="submit" class="primary-btn">Login</button>
+            </form>
+
+            <form id="signupForm" class="auth-form hidden">
+                <h2>Create an account</h2>
+                <label>
+                    Email
+                    <input type="email" id="signupEmail" required placeholder="you@example.com" />
+                </label>
+                <label>
+                    Password
+                    <input type="password" id="signupPassword" required minlength="6"
+                        placeholder="At least 6 characters" />
+                </label>
+                <button type="submit" class="primary-btn">Create Account</button>
+            </form>
+        </section>
+
+        <section id="dashboardView" class="hidden">
+            <div class="dashboard-toolbar">
+                <div>
+                    <p class="eyebrow">Dashboard</p>
+                    <h2>Users</h2>
+                </div>
+                <button id="logoutBtn" class="secondary-btn">Logout</button>
+            </div>
+
+            <div class="stats-grid">
+                <article class="card stat-card">
+                    <h3>Add User</h3>
+                    <p>Store profile details in Firestore.</p>
+                </article>
+                <article class="card stat-card">
+                    <h3>View & Edit</h3>
+                    <p>Review complete details or update records instantly.</p>
+                </article>
+                <article class="card stat-card">
+                    <h3>Delete Records</h3>
+                    <p>Remove outdated or incorrect user profiles.</p>
+                </article>
+            </div>
+
+            <div class="card form-card">
+                <div class="card-header">
+                    <h3 id="formTitle">Add New User</h3>
+                    <button id="cancelEditBtn" class="ghost-btn hidden">Cancel Edit</button>
+                </div>
+                <form id="userForm" class="user-form">
+                    <div class="field-grid">
+                        <label>
+                            Full Name
+                            <input type="text" id="fullName" required placeholder="Jane Doe" />
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" id="userEmail" required placeholder="jane@example.com" />
+                        </label>
+                        <label>
+                            Age
+                            <input type="number" id="age" required min="1" placeholder="25" />
+                        </label>
+                        <label>
+                            City
+                            <input type="text" id="city" required placeholder="Lagos" />
+                        </label>
+                        <label>
+                            Profession
+                            <input type="text" id="profession" required placeholder="Developer" />
+                        </label>
+                    </div>
+                    <button type="submit" class="primary-btn" id="submitUserBtn">Add User</button>
+                </form>
+            </div>
+
+            <div class="card table-card">
+                <div class="card-header">
+                    <h3>User Records</h3>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>City</th>
+                                <th>Profession</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr>
+                                <td colspan="6" class="empty-state">Loading users...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="detailModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <div class="card-header">
+                <h3 id="modalTitle">User Details</h3>
+                <button id="closeModalBtn" class="ghost-btn">Close</button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
